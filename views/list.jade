@@ -1,0 +1,27 @@
+extends layout
+block content
+    div.container
+         div.content
+            div.row 
+                h1 User List
+            hr 
+            div.row
+                table.table.table-hover.table-bordered 
+                    thead 
+                        tr 
+                            th Name
+                            th Last Name
+                            th E-Mail
+                            th Delete User
+                    tbody 
+                        each user, i in userList
+                            tr  
+                                td #{user.name}
+                                td #{user.lastname}
+                                td #{user.email}
+                                td
+                                    a.btn.btn-danger.btn-xs(href="/users/delete/" + user._id) Delete   
+                hr
+                div.row 
+                    div.col-md-12 
+                        a.btn.btn-default(href="/users/create") Add New User                 
